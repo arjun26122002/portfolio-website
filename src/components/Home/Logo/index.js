@@ -4,25 +4,21 @@ import Logor from '../../../assets/images/prof_photo.png';
 import { useRef } from 'react';
 
 const Logo = () => {
-         
-       const bgref= useRef();
-       const outlineLogoRef =useRef();
-       const solidLogoref =useRef();
-         
+
+    const bgref = useRef();
+    const outlineLogoRef = useRef();
+    const solidLogoref = useRef();
+
     return (
         <div className='Logo-container'>
             <img className='solid-logo' src={Logor} style={{
-                width:'60vh'
+                width: '65vh',
             }} alt="$" />
-
             <svg
-            width="559pt"
-        height="897pt"
-        version="1.0"
-        viewBox="0 0 559 897"
-        xmlns="http://www.w3.org/2000/svg"
-        >
-                
+                version="1.0"
+                viewBox="0 0 559 897"
+                xmlns="http://www.w3.org/2000/svg"
+            >
                 <g
                     className="svg-container"
                     transform="translate(0 457) scale(.1 -.1)"
@@ -35,7 +31,7 @@ const Logo = () => {
                 </g>
             </svg>
         </div >
-      )
+    )
 
 
 }

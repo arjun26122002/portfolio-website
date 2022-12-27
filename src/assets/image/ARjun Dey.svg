@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-55 147 500 500" style="enable-background:new -55 147 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{display:none;fill:#565657;}
+	.st2{clip-path:url(#SVGID_2_);}
+	.st3{filter:url(#Adobe_OpacityMaskFilter);}
+	.st4{fill:none;enable-background:new    ;}
+	.st5{mask:url(#_x33_8bb848a0c);}
+</style>
+<rect x="-105" y="97" class="st0" width="600" height="600"/>
+<rect x="-105" y="97" class="st0" width="600" height="600"/>
+<rect x="-105" y="97" class="st1" width="600" height="600"/>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="-5" y="255" width="371" height="374.7"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g class="st2">
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="-5" y="255" width="371" height="375">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-5" y="255" width="371" height="375" id="_x33_8bb848a0c">
+			<g class="st3">
+				<g transform="matrix(0.173906, 0, 0, 0.173718, 37.500002, 80.999937)">
+					
+						<image style="overflow:visible;" width="1600" height="1619" xlink:href="94066F7D.png"  transform="matrix(1.3333 0 0 1.3333 -244.3849 1001.6232)">
+					</image>
+					<path class="st4" d="z"/>
+				</g>
+			</g>
+		</mask>
+		<g class="st5">
+			<g transform="matrix(0.173906, 0, 0, 0.173718, 37.500002, 80.999937)">
+				<g>
+					
+						<image style="overflow:visible;" width="1600" height="1619" xlink:href="94066F7F.png"  transform="matrix(1.3333 0 0 1.3333 -244.3849 1001.6232)">
+					</image>
+				</g>
+				<path class="st4" d="z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

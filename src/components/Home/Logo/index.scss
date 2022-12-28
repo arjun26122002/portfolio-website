@@ -1,11 +1,19 @@
-.logo-container{
+.logo-container {
   z-index: 0;
   width: 400px;
   height: 609px;
   opacity: 0;
   // position: absolute;
   top: 0;
-  right: 15%;
+  right: 0;
   bottom: 0;
-  // margin: auto;
+  left: auto;
+  margin: auto;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  // transform: rotateZ(30deg) !important;
 }

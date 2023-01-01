@@ -1,0 +1,30 @@
+ {
+    "project":[
+        {
+            "cover": "/project/1/hey0.png",
+            "title": "ByJuice",
+            "description": "This is my first project using html5 and css3",
+            "url": "https://byjuice.netlify.app/#"
+        },
+
+            {
+                "cover": "/project/1/hey2.png",
+                "title": "SUBMIT-GAME",
+                "description": "This is now on #1 trending project",
+                "url": "https://submit-game.netlify.app/"
+            },
+
+            {
+                "cover": "/project/1/hey1.png",
+                "title": "Coming Soon......",
+                "description": "",
+                "url": "https://www.google.com/"
+            },
+            {
+                "cover": "/project/1/hey1.png",
+                "title": "Coming Soon......",
+                "description": "",
+                "url": "https://www.google.com/"
+            }
+    ]
+ }

@@ -40,7 +40,7 @@
   
   .container.about-page,
   .container.contact-page,
-  .container.portfolio-page{
+  .container.project-page{
       
 
       h1{
@@ -50,8 +50,8 @@
         font-weight: 400;
         margin-top: 0;
         position: relative;
-        margin-bottom: 40px;
-        left: 10px;
+        margin-bottom:40px;
+        left: -10px;
 
         &:before{
           content: '<h1>';

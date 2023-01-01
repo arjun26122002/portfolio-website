@@ -37,11 +37,11 @@ const Home = () => {
   return (
     <>
       <div className="container home-page">
-        <div style={{
+        {/* <div className='update-media' style={{
           display:'flex',
           justifyContent:"space-between",right :"0"
 
-        }}>
+        }}> */}
         <div className="text-zone">
           <h1>
             <span className={letterClass}>H</span>
@@ -69,14 +69,10 @@ const Home = () => {
           <Link to="/contact" className="flat-button">
             CONTACT ME
           </Link>
-          
-
         </div>
-        <div>
         <Logo />
         </div>
-        </div>
-      </div>
+      {/* </div> */}
       {/* <Loader type="pacman" /> */}
       <Loader type="pacman"
 />

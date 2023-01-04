@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<!-- Created by pdf2htmlEX (https://github.com/coolwanglu/pdf2htmlex) -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <script>
+      try {
+        theViewer.defaultViewer = new theViewer.Viewer({});
+      } catch (e) {}
+    </script>
+
+    <style>
+      .content {
+        max-width: 500px;
+        margin: auto;
+      }
+      #sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 250px;
+        padding: 0;
+        margin: 0;
+        overflow: auto;
+      }
+      #page-container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding-left: 250px;
+      }
+      @media screen {
+        #sidebar.opened + #page-container {
+          left: 250px;
+        }
+        #page-container {
+          bottom: 0;
+          right: 0;
+          overflow: auto;
+        }
+        .loading-indicator {
+          display: none;
+        }
+        .loading-indicator.active {
+          display: block;
+          position: absolute;
+          width: 64px;
+          height: 64px;
+          top: 50%;
+          left: 50%;
+          margin-top: -32px;
+          margin-left: -32px;
+        }
+        .loading-indicator img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+        }
+      }
+      @media print {
+        @page {
+          margin: 0;
+        }
+        html {
+          margin: 0;
+        }
+        body {
+          margin: 0;
+          -webkit-print-color-adjust: exact;
+        }
+        #sidebar {
+          display: none;
+        }
+        #page-container {
+          width: auto;
+          height: auto;
+          overflow: visible;
+          background-color: transparent;
+        }
+        .d {
+          display: none;
+        }
+      }
+      .pf {
+        position: relative;
+        background-color: white;
+        overflow: hidden;
+        margin: 0;
+        border: 0;
+      }
+      .pc {
+        position: absolute;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: block;
+        transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+      }
+      .pc.opened {
+        display: block;
+      }
+      .bf {
+        position: absolute;
+        border: 0;
+        margin: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      .bi {
+        position: absolute;
+        border: 0;
+        margin: 0;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      @media print {
+        .pf {
+          margin: 0;
+          box-shadow: none;
+          page-break-after: always;
+          page-break-inside: avoid;
+        }
+        @-moz-document url-prefix() {
+          .pf {
+            overflow: visible;
+            border: 1px solid #fff;
+          }
+          .pc {
+            overflow: visible;
+          }
+        }
+      }
+      .c {
+        position: absolute;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        display: block;
+      }
+      .t {
+        position: absolute;
+        white-space: pre;
+        font-size: 1px;
+        transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        -webkit-transform-origin: 0 100%;
+        unicode-bidi: bidi-override;
+        -moz-font-feature-settings: "liga" 0;
+      }
+      .t:after {
+        content: "";
+      }
+      .t:before {
+        content: "";
+        display: inline-block;
+      }
+      .t span {
+        position: relative;
+        unicode-bidi: bidi-override;
+      }
+      ._ {
+        display: inline-block;
+        color: transparent;
+        z-index: -1;
+      }
+      ::selection {
+        background: rgba(127, 255, 255, 0.4);
+      }
+      ::-moz-selection {
+        background: rgba(127, 255, 255, 0.4);
+      }
+      .pi {
+        display: none;
+      }
+      .d {
+        position: absolute;
+        transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        -webkit-transform-origin: 0 100%;
+      }
+      .it {
+        border: 0;
+        background-color: rgba(255, 255, 255, 0);
+      }
+      .ir:hover {
+        cursor: pointer;
+      }
+      .ff0 {
+        font-family: sans-serif;
+        visibility: hidden;
+      }
+      @font-face {
+        font-family: ff1;
+        src: url(f1.woff) format("woff");
+      }
+      .ff1 {
+        font-family: ff1;
+        line-height: 0.861816;
+        font-style: normal;
+        font-weight: normal;
+        visibility: visible;
+      }
+      @font-face {
+        font-family: ff2;
+        src: url(f2.woff) format("woff");
+      }
+      .ff2 {
+        font-family: ff2;
+        line-height: 0.895996;
+        font-style: normal;
+        font-weight: normal;
+        visibility: visible;
+      }
+      @font-face {
+        font-family: ff3;
+        src: url(f3.woff) format("woff");
+      }
+      .ff3 {
+        font-family: ff3;
+        line-height: 0.938477;
+        font-style: normal;
+        font-weight: normal;
+        visibility: visible;
+      }
+      @font-face {
+        font-family: ff4;
+        src: url(f4.woff) format("woff");
+      }
+      .ff4 {
+        font-family: ff4;
+        line-height: 0.938965;
+        font-style: normal;
+        font-weight: normal;
+        visibility: visible;
+      }
+      .m0 {
+        transform: matrix(0.25, 0, 0, 0.25, 0, 0);
+        -ms-transform: matrix(0.25, 0, 0, 0.25, 0, 0);
+        -webkit-transform: matrix(0.25, 0, 0, 0.25, 0, 0);
+      }
+      .v0 {
+        vertical-align: 0px;
+      }
+      .ls0 {
+        letter-spacing: 0px;
+      }
+      .sc_ {
+        text-shadow: none;
+      }
+      .sc0 {
+        text-shadow: -0.015em 0 transparent, 0 0.015em transparent,
+          0.015em 0 transparent, 0 -0.015em transparent;
+      }
+      @media screen and (-webkit-min-device-pixel-ratio: 0) {
+        .sc_ {
+          -webkit-text-stroke: 0px transparent;
+        }
+        .sc0 {
+          -webkit-text-stroke: 0.015em transparent;
+          text-shadow: none;
+        }
+      }
+      .ws0 {
+        word-spacing: 0px;
+      }
+      .fc0 {
+        color: rgb(0, 0, 0);
+      }
+      .fs2 {
+        font-size: 32px;
+      }
+      .fs1 {
+        font-size: 40px;
+      }
+      .fs0 {
+        font-size: 72px;
+      }
+      .y4 {
+        bottom: 5.48px;
+      }
+      .y6 {
+        bottom: 6.48px;
+      }
+      .y8 {
+        bottom: 6.62px;
+      }
+      .y18 {
+        bottom: 7.496px;
+      }
+      .y2 {
+        bottom: 8.664px;
+      }
+      .ya {
+        bottom: 15.619px;
+      }
+      .y29 {
+        bottom: 16.188995px;
+      }
+      .y2d {
+        bottom: 16.188999px;
+      }
+      .y20 {
+        bottom: 16.189003px;
+      }
+      .y24 {
+        bottom: 27.118001px;
+      }
+      .yd {
+        bottom: 27.118999px;
+      }
+      .y28 {
+        bottom: 28.398994px;
+      }
+      .y1f {
+        bottom: 28.399002px;
+      }
+      .yc {
+        bottom: 38.619px;
+      }
+      .y27 {
+        bottom: 40.608997px;
+      }
+      .y1e {
+        bottom: 40.609001px;
+      }
+      .y0 {
+        bottom: 43px;
+      }
+      .y2a {
+        bottom: 43.013px;
+      }
+      .y26 {
+        bottom: 52.818996px;
+      }
+      .y1d {
+        bottom: 52.819px;
+      }
+      .y30 {
+        bottom: 52.819004px;
+      }
+      .y1c {
+        bottom: 65.029003px;
+      }
+      .y1b {
+        bottom: 77.239002px;
+      }
+      .y25 {
+        bottom: 85.461006px;
+      }
+      .y23 {
+        bottom: 154.799988px;
+      }
+      .y22 {
+        bottom: 198.247971px;
+      }
+      .y21 {
+        bottom: 217.247971px;
+      }
+      .y1a {
+        bottom: 241.247971px;
+      }
+      .y19 {
+        bottom: 333.956985px;
+      }
+      .y17 {
+        bottom: 375.956985px;
+      }
+      .y16 {
+        bottom: 398.906967px;
+      }
+      .y15 {
+        bottom: 430.006981px;
+      }
+      .y13 {
+        bottom: 462.105982px;
+      }
+      .y14 {
+        bottom: 472.455978px;
+      }
+      .y12 {
+        bottom: 473.605982px;
+      }
+      .y11 {
+        bottom: 503.554982px;
+      }
+      .y2b {
+        bottom: 529.5px;
+      }
+      .y33 {
+        bottom: 530.465981px;
+      }
+      .y10 {
+        bottom: 539.20398px;
+      }
+      .y32 {
+        bottom: 559.17498px;
+      }
+      .yf {
+        bottom: 561.203979px;
+      }
+      .y31 {
+        bottom: 587.88398px;
+      }
+      .ye {
+        bottom: 596.552979px;
+      }
+      .y2f {
+        bottom: 621.542976px;
+      }
+      .yb {
+        bottom: 628.501978px;
+      }
+      .y9 {
+        bottom: 630.401978px;
+      }
+      .y7 {
+        bottom: 685.85098px;
+      }
+      .y2e {
+        bottom: 710.740974px;
+      }
+      .y5 {
+        bottom: 721.449974px;
+      }
+      .y2c {
+        bottom: 729.890976px;
+      }
+      .y3 {
+        bottom: 758.749975px;
+      }
+      .y1 {
+        bottom: 776.899976px;
+      }
+      .h4 {
+        height: 17px;
+      }
+      .h6 {
+        height: 18px;
+      }
+      .hd {
+        height: 23.296875px;
+      }
+      .h9 {
+        height: 26.999001px;
+      }
+      .h7 {
+        height: 27.34375px;
+      }
+      .h12 {
+        height: 27.709px;
+      }
+      .h2 {
+        height: 27.799999px;
+      }
+      .h5 {
+        height: 28.710938px;
+      }
+      .h8 {
+        height: 29.121094px;
+      }
+      .ha {
+        height: 29.140625px;
+      }
+      .hf {
+        height: 38.498001px;
+      }
+      .hc {
+        height: 38.499001px;
+      }
+      .h3 {
+        height: 49.21875px;
+      }
+      .hb {
+        height: 49.999001px;
+      }
+      .h10 {
+        height: 64.338997px;
+      }
+      .h13 {
+        height: 76.549004px;
+      }
+      .he {
+        height: 88.759003px;
+      }
+      .h11 {
+        height: 186.5px;
+      }
+      .h1 {
+        height: 684px;
+      }
+      .h0 {
+        height: 841.849976px;
+      }
+      .wc {
+        width: 65.400002px;
+      }
+      .we {
+        width: 69.449997px;
+      }
+      .w11 {
+        width: 99.050003px;
+      }
+      .w15 {
+        width: 99.199997px;
+      }
+      .wa {
+        width: 149.600006px;
+      }
+      .wb {
+        width: 165.149994px;
+      }
+      .wd {
+        width: 186.350006px;
+      }
+      .w12 {
+        width: 193.399994px;
+      }
+      .w7 {
+        width: 197.649994px;
+      }
+      .w6 {
+        width: 218.600006px;
+      }
+      .w8 {
+        width: 260px;
+      }
+      .w5 {
+        width: 273.799988px;
+      }
+      .w13 {
+        width: 311.5px;
+      }
+      .wf {
+        width: 535.849976px;
+      }
+      .w2 {
+        width: 535.950012px;
+      }
+      .w4 {
+        width: 536.549988px;
+      }
+      .w3 {
+        width: 536.650024px;
+      }
+      .w14 {
+        width: 537.150024px;
+      }
+      .w9 {
+        width: 537.25px;
+      }
+      .w1 {
+        width: 538.5px;
+      }
+      .w10 {
+        width: 538.549988px;
+      }
+      .w0 {
+        width: 595.25px;
+      }
+      .x5 {
+        left: 2px;
+      }
+      .x0 {
+        left: 17.5px;
+      }
+      .x1 {
+        left: 19.5px;
+      }
+      .x6 {
+        left: 22.95px;
+      }
+      .x15 {
+        left: 28.209999px;
+      }
+      .x10 {
+        left: 30.167px;
+      }
+      .x12 {
+        left: 40.398998px;
+      }
+      .xe {
+        left: 50.613998px;
+      }
+      .xc {
+        left: 54.613998px;
+      }
+      .x14 {
+        left: 69.988998px;
+      }
+      .xa {
+        left: 86.800001px;
+      }
+      .x13 {
+        left: 119.050003px;
+      }
+      .x2 {
+        left: 135.136993px;
+      }
+      .x3 {
+        left: 185.791px;
+      }
+      .x8 {
+        left: 201.049994px;
+      }
+      .x4 {
+        left: 226.376007px;
+      }
+      .xb {
+        left: 274.15px;
+      }
+      .x7 {
+        left: 329.750006px;
+      }
+      .xd {
+        left: 344.600012px;
+      }
+      .x9 {
+        left: 391.049994px;
+      }
+      .xf {
+        left: 415.049994px;
+      }
+      .x11 {
+        left: 485.500006px;
+      }
+      @media print {
+        .v0 {
+          vertical-align: 0pt;
+        }
+        .ls0 {
+          letter-spacing: 0pt;
+        }
+        .ws0 {
+          word-spacing: 0pt;
+        }
+        .fs2 {
+          font-size: 42.666667pt;
+        }
+        .fs1 {
+          font-size: 53.333333pt;
+        }
+        .fs0 {
+          font-size: 96pt;
+        }
+        .y4 {
+          bottom: 7.306666pt;
+        }
+        .y6 {
+          bottom: 8.639999pt;
+        }
+        .y8 {
+          bottom: 8.826667pt;
+        }
+        .y18 {
+          bottom: 9.994666pt;
+        }
+        .y2 {
+          bottom: 11.551999pt;
+        }
+        .ya {
+          bottom: 20.825334pt;
+        }
+        .y29 {
+          bottom: 21.585327pt;
+        }
+        .y2d {
+          bottom: 21.585332pt;
+        }
+        .y20 {
+          bottom: 21.585337pt;
+        }
+        .y24 {
+          bottom: 36.157335pt;
+        }
+        .yd {
+          bottom: 36.158666pt;
+        }
+        .y28 {
+          bottom: 37.865326pt;
+        }
+        .y1f {
+          bottom: 37.865336pt;
+        }
+        .yc {
+          bottom: 51.492001pt;
+        }
+        .y27 {
+          bottom: 54.14533pt;
+        }
+        .y1e {
+          bottom: 54.145335pt;
+        }
+        .y0 {
+          bottom: 57.333333pt;
+        }
+        .y2a {
+          bottom: 57.350667pt;
+        }
+        .y26 {
+          bottom: 70.425329pt;
+        }
+        .y1d {
+          bottom: 70.425334pt;
+        }
+        .y30 {
+          bottom: 70.425339pt;
+        }
+        .y1c {
+          bottom: 86.705338pt;
+        }
+        .y1b {
+          bottom: 102.985336pt;
+        }
+        .y25 {
+          bottom: 113.948008pt;
+        }
+        .y23 {
+          bottom: 206.399984pt;
+        }
+        .y22 {
+          bottom: 264.330627pt;
+        }
+        .y21 {
+          bottom: 289.663961pt;
+        }
+        .y1a {
+          bottom: 321.663961pt;
+        }
+        .y19 {
+          bottom: 445.275981pt;
+        }
+        .y17 {
+          bottom: 501.275981pt;
+        }
+        .y16 {
+          bottom: 531.875956pt;
+        }
+        .y15 {
+          bottom: 573.342641pt;
+        }
+        .y13 {
+          bottom: 616.14131pt;
+        }
+        .y14 {
+          bottom: 629.941305pt;
+        }
+        .y12 {
+          bottom: 631.474643pt;
+        }
+        .y11 {
+          bottom: 671.406643pt;
+        }
+        .y2b {
+          bottom: 706pt;
+        }
+        .y33 {
+          bottom: 707.287974pt;
+        }
+        .y10 {
+          bottom: 718.938639pt;
+        }
+        .y32 {
+          bottom: 745.56664pt;
+        }
+        .yf {
+          bottom: 748.271973pt;
+        }
+        .y31 {
+          bottom: 783.845306pt;
+        }
+        .ye {
+          bottom: 795.403971pt;
+        }
+        .y2f {
+          bottom: 828.723969pt;
+        }
+        .yb {
+          bottom: 838.002637pt;
+        }
+        .y9 {
+          bottom: 840.53597pt;
+        }
+        .y7 {
+          bottom: 914.467973pt;
+        }
+        .y2e {
+          bottom: 947.654633pt;
+        }
+        .y5 {
+          bottom: 961.933299pt;
+        }
+        .y2c {
+          bottom: 973.187968pt;
+        }
+        .y3 {
+          bottom: 1011.666634pt;
+        }
+        .y1 {
+          bottom: 1035.866635pt;
+        }
+        .h4 {
+          height: 22.666667pt;
+        }
+        .h6 {
+          height: 24pt;
+        }
+        .hd {
+          height: 31.0625pt;
+        }
+        .h9 {
+          height: 35.998667pt;
+        }
+        .h7 {
+          height: 36.458333pt;
+        }
+        .h12 {
+          height: 36.945333pt;
+        }
+        .h2 {
+          height: 37.066666pt;
+        }
+        .h5 {
+          height: 38.28125pt;
+        }
+        .h8 {
+          height: 38.828125pt;
+        }
+        .ha {
+          height: 38.854167pt;
+        }
+        .hf {
+          height: 51.330668pt;
+        }
+        .hc {
+          height: 51.332001pt;
+        }
+        .h3 {
+          height: 65.625pt;
+        }
+        .hb {
+          height: 66.665334pt;
+        }
+        .h10 {
+          height: 85.785329pt;
+        }
+        .h13 {
+          height: 102.065338pt;
+        }
+        .he {
+          height: 118.345337pt;
+        }
+        .h11 {
+          height: 248.666667pt;
+        }
+        .h1 {
+          height: 912pt;
+        }
+        .h0 {
+          height: 1122.466634pt;
+        }
+        .wc {
+          width: 87.200002pt;
+        }
+        .we {
+          width: 92.599996pt;
+        }
+        .w11 {
+          width: 132.066671pt;
+        }
+        .w15 {
+          width: 132.266663pt;
+        }
+        .wa {
+          width: 199.466675pt;
+        }
+        .wb {
+          width: 220.199992pt;
+        }
+        .wd {
+          width: 248.466675pt;
+        }
+        .w12 {
+          width: 257.866659pt;
+        }
+        .w7 {
+          width: 263.533325pt;
+        }
+        .w6 {
+          width: 291.466675pt;
+        }
+        .w8 {
+          width: 346.666667pt;
+        }
+        .w5 {
+          width: 365.06665pt;
+        }
+        .w13 {
+          width: 415.333333pt;
+        }
+        .wf {
+          width: 714.466634pt;
+        }
+        .w2 {
+          width: 714.600016pt;
+        }
+        .w4 {
+          width: 715.399984pt;
+        }
+        .w3 {
+          width: 715.533366pt;
+        }
+        .w14 {
+          width: 716.200033pt;
+        }
+        .w9 {
+          width: 716.333333pt;
+        }
+        .w1 {
+          width: 718pt;
+        }
+        .w10 {
+          width: 718.06665pt;
+        }
+        .w0 {
+          width: 793.666667pt;
+        }
+        .x5 {
+          left: 2.666667pt;
+        }
+        .x0 {
+          left: 23.333333pt;
+        }
+        .x1 {
+          left: 25.999999pt;
+        }
+        .x6 {
+          left: 30.599999pt;
+        }
+        .x15 {
+          left: 37.613332pt;
+        }
+        .x10 {
+          left: 40.222666pt;
+        }
+        .x12 {
+          left: 53.865331pt;
+        }
+        .xe {
+          left: 67.485331pt;
+        }
+        .xc {
+          left: 72.818665pt;
+        }
+        .x14 {
+          left: 93.318665pt;
+        }
+        .xa {
+          left: 115.733335pt;
+        }
+        .x13 {
+          left: 158.733337pt;
+        }
+        .x2 {
+          left: 180.182658pt;
+        }
+        .x3 {
+          left: 247.721334pt;
+        }
+        .x8 {
+          left: 268.066658pt;
+        }
+        .x4 {
+          left: 301.834676pt;
+        }
+        .xb {
+          left: 365.533333pt;
+        }
+        .x7 {
+          left: 439.666674pt;
+        }
+        .xd {
+          left: 459.466682pt;
+        }
+        .x9 {
+          left: 521.399991pt;
+        }
+        .xf {
+          left: 553.399991pt;
+        }
+        .x11 {
+          left: 647.333341pt;
+        }
+      }
+    </style>
+
+    <title></title>
+  </head>
+  <body>
+    <div id="sidebar" class="content">
+      <div id="outline"></div>
+    </div>
+    <div id="page-container">
+      <div id="pf1" class="pf w0 h0" data-page-no="1">
+        <div class="pc pc1 w0 h0">
+          <img class="bi x0 y0 w1 h1" alt="" src="bg1.png" />
+          <div class="c x1 y1 w2 h2">
+            <div class="t m0 x2 h3 y2 ff1 fs0 fc0 sc0 ls0 ws0">
+              BAOUND PORIBHAR NIDHI LIMITED
+            </div>
+          </div>
+          <div class="c x1 y3 w3 h4">
+            <div class="t m0 x3 h5 y4 ff2 fs1 fc0 sc0 ls0 ws0">
+              (Registered Under Companies Act, 2013)
+            </div>
+          </div>
+          <div class="c x1 y5 w3 h6">
+            <div class="t m0 x4 h7 y6 ff1 fs1 fc0 sc0 ls0 ws0">
+              APPLICATION FORM
+            </div>
+          </div>
+          <div class="c x1 y7 w4 h6">
+            <div class="t m0 x5 h8 y8 ff3 fs1 fc0 sc0 ls0 ws0">
+              PERSONAL DETAILS :
+            </div>
+          </div>
+          <div class="c x6 y9 w5 h9">
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              C/O Name : DHARMA BAG / Father
+            </div>
+          </div>
+          <div class="c x7 yb w6 hb">
+            <div class="t m0 x5 ha yc ff4 fs1 fc0 sc0 ls0 ws0">
+              Residence Address : VILL-NINGRA, POST-
+            </div>
+            <div class="t m0 x5 ha yd ff4 fs1 fc0 sc0 ls0 ws0">
+              SAMUDRAGARH, P.S-NADANGHAT,PURBA
+            </div>
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              BARDHAMAN,WEST BENGAL-713519
+            </div>
+          </div>
+          <div class="c x6 ye w7 h9">
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              Member Code : 11000431
+            </div>
+          </div>
+          <div class="c x7 ye w6 h9">
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              Phone No. : 9775775061
+            </div>
+          </div>
+          <div class="c x6 yf w8 h9">
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              Borrower Name : RUP CHAND BAG
+            </div>
+          </div>
+          <div class="c x0 y10 w9 h6">
+            <div class="t m0 x5 h8 y8 ff3 fs1 fc0 sc0 ls0 ws0">
+              LOAN DETAILS :
+            </div>
+          </div>
+          <div class="c x6 y11 wa h9">
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              Loan ID : 1310012
+            </div>
+          </div>
+          <div class="c x8 y11 wa h9">
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              Loan Date : 31/03/2022
+            </div>
+          </div>
+          <div class="c x9 y11 wa h9">
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              Branch : Samudragarh-276501
+            </div>
+          </div>
+          <div class="c x6 y12 wa h9">
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              Loan Amount : 10000 /-
+            </div>
+          </div>
+          <div class="c x8 y13 wa hc">
+            <div class="t m0 x5 ha yd ff4 fs1 fc0 sc0 ls0 ws0">
+              Plan Name : Bazar Unsecured
+            </div>
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">Loan</div>
+          </div>
+          <div class="c x9 y14 wa h9">
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              PlanCode :2B37E
+            </div>
+          </div>
+          <div class="c x6 y15 wb h9">
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              Net Disbursement : 10000 /-
+            </div>
+          </div>
+          <div class="c x8 y15 wa h9">
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              Tenure : 111 Daily
+            </div>
+          </div>
+          <div class="c x9 y15 wa h9">
+            <div class="t m0 x5 ha ya ff4 fs1 fc0 sc0 ls0 ws0">
+              ROI (% p.a.) :20 %
+            </div>
+          </div>
+          <div class="c x1 y16 w4 h6">
+            <div class="t m0 x5 h8 y8 ff3 fs1 fc0 sc0 ls0 ws0">
+              GOLD LOAN DETAILS :
+            </div>
+          </div>
+          <div class="c x1 y17 wc h4">
+            <div class="t m0 x5 hd y18 ff3 fs2 fc0 sc0 ls0 ws0">Item Type</div>
+          </div>
+          <div class="c xa y17 wd h4">
+            <div class="t m0 x5 hd y18 ff3 fs2 fc0 sc0 ls0 ws0">Item Name</div>
+          </div>
+          <div class="c xb y17 we h4">
+            <div class="t m0 xc hd y18 ff3 fs2 fc0 sc0 ls0 ws0">Qty</div>
+          </div>
+          <div class="c xd y17 we h4">
+            <div class="t m0 xe hd y18 ff3 fs2 fc0 sc0 ls0 ws0">Rate</div>
+          </div>
+          <div class="c xf y17 we h4">
+            <div class="t m0 x10 hd y18 ff3 fs2 fc0 sc0 ls0 ws0">Gross Wt.</div>
+          </div>
+          <div class="c x11 y17 we h4">
+            <div class="t m0 x12 hd y18 ff3 fs2 fc0 sc0 ls0 ws0">Net Wt.</div>
+          </div>
+          <div class="c x1 y19 wf h6">
+            <div class="t m0 x5 h8 y8 ff3 fs1 fc0 sc0 ls0 ws0">DECLARATION</div>
+          </div>
+          <div class="c x0 y1a w10 he">
+            <div class="t m0 x5 h5 y1b ff2 fs1 fc0 sc0 ls0 ws0">
+              I, the Undersigned hereby acknowledge the receipt of the loan
+              amount as mentioned above against Gold Pledged as Colleteral with
+            </div>
+            <div class="t m0 x5 h5 y1c ff2 fs1 fc0 sc0 ls0 ws0">
+              BAOUND PORIBHAR NIDHI LIMITED. I/We hereby confirm that the above
+              details of the Gold, items deposited/pledged by me/us,are
+            </div>
+            <div class="t m0 x5 h5 y1d ff2 fs1 fc0 sc0 ls0 ws0">
+              complete and accurate and the same s binding upon me/us.I agree
+              and understand all the schedule of charges and agree to abide
+            </div>
+            <div class="t m0 x5 h5 y1e ff2 fs1 fc0 sc0 ls0 ws0">
+              by them.I am fully aware that delayed payments will/may incur
+              additional charges as listed in the schedule of charges policy at
+            </div>
+            <div class="t m0 x5 h5 y1f ff2 fs1 fc0 sc0 ls0 ws0">
+              BAOUND PORIBHAR NIDHI LIMITED . I agree and accept all the
+              information listed above as accurate and that I will abide by all
+              the
+            </div>
+            <div class="t m0 x5 h5 y20 ff2 fs1 fc0 sc0 ls0 ws0">
+              terms and conditions as countersigned by me on this form.
+            </div>
+          </div>
+          <div class="c x1 y21 w11 h6">
+            <div class="t m0 x5 h5 y6 ff2 fs1 fc0 sc0 ls0 ws0">
+              Borrower Name
+            </div>
+          </div>
+          <div class="c x13 y21 w12 h6">
+            <div class="t m0 x5 h5 y6 ff2 fs1 fc0 sc0 ls0 ws0">
+              RUP CHAND BAG
+            </div>
+          </div>
+          <div class="c x1 y22 w11 h6">
+            <div class="t m0 x5 h5 y6 ff2 fs1 fc0 sc0 ls0 ws0">
+              Signature &amp; Date
+            </div>
+          </div>
+          <div class="c x0 y23 w9 hf">
+            <div class="t m0 x14 h8 y24 ff3 fs1 fc0 sc0 ls0 ws0">
+              Appraiser Declaration &amp; Authorized Signatory - BAOUND PORIBHAR
+              NIDHI LIMITED
+            </div>
+          </div>
+          <div class="c x1 y25 wf h10">
+            <div class="t m0 x5 h5 y26 ff2 fs1 fc0 sc0 ls0 ws0">
+              I/We hereby Certify that the Gold Items as listed above as genuine
+              with the specified attributes of quality &amp; quantity and the
+            </div>
+            <div class="t m0 x5 h5 y27 ff2 fs1 fc0 sc0 ls0 ws0">
+              valuation has been done with prevailing Market Valuations
+              standards and as per M/s. BAOUND PORIBHAR NIDHI LIMITED&apos;s
+              internal
+            </div>
+            <div class="t m0 x5 h5 y28 ff2 fs1 fc0 sc0 ls0 ws0">
+              Valuation Policies.I have also verified all the relevant documents
+              against the Originals. I/We have followed all the relevant M/s.
+            </div>
+            <div class="t m0 x5 h5 y29 ff2 fs1 fc0 sc0 ls0 ws0">
+              BAOUND PORIBHAR NIDHI LIMITED. Policies and Processes and all the
+              above information is accurate to the best of my knowledge
+            </div>
+          </div>
+          <div class="c x1 y2a wf hf">
+            <div class="t m0 x14 h8 y24 ff3 fs1 fc0 sc0 ls0 ws0">
+              Appraiser Declaration &amp; Authorized Signatory - BAOUND PORIBHAR
+              NIDHI LIMITED
+            </div>
+          </div>
+        </div>
+        <div
+          class="pi"
+          data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'
+        ></div>
+      </div>
+      <div id="pf2" class="pf w0 h0" data-page-no="2">
+        <div class="pc pc2 w0 h0">
+          <img class="bi x0 y2b w13 h11" alt="" src="bg2.png" />
+          <div class="c x1 y1 w2 h2">
+            <div class="t m0 x2 h3 y2 ff1 fs0 fc0 sc0 ls0 ws0">
+              BAOUND PORIBHAR NIDHI LIMITED
+            </div>
+          </div>
+          <div class="c x1 y3 w3 h4">
+            <div class="t m0 x3 h5 y4 ff2 fs1 fc0 sc0 ls0 ws0">
+              (Registered Under Companies Act, 2013)
+            </div>
+          </div>
+          <div class="c x1 y2c w3 h12">
+            <div class="t m0 x15 h5 y2d ff1 fs1 fc0 sc0 ls0 ws0">
+              Regd. Office:
+              <span class="ff2"
+                >SAMUDRAGARH PURBASTHALI BARDHAMAN - WEST BENGAL - 713519 (CIN)
+                U65990WB2022PLN250750</span
+              >
+            </div>
+          </div>
+          <div class="c x1 y2e w3 h6">
+            <div class="t m0 x4 h7 y6 ff1 fs1 fc0 sc0 ls0 ws0">
+              APPLICATION FORM
+            </div>
+          </div>
+          <div class="c x0 y2f w14 h13">
+            <div class="t m0 x5 h5 y1c ff2 fs1 fc0 sc0 ls0 ws0">
+              I/We hereby Certify that the Gold Items as listed above as genuine
+              with the specified attributes of quality &amp; quantity and the
+            </div>
+            <div class="t m0 x5 h5 y30 ff2 fs1 fc0 sc0 ls0 ws0">
+              valuation has been done with prevailing Market Valuations
+              standards and as per M/s. BAOUND PORIBHAR NIDHI LIMITED&apos;s
+              internal
+            </div>
+            <div class="t m0 x5 h5 y1e ff2 fs1 fc0 sc0 ls0 ws0">
+              Valuation Policies.I have also verified all the relevant documents
+              against the Originals. I/We have followed all the relevant
+            </div>
+            <div class="t m0 x5 h5 y1f ff2 fs1 fc0 sc0 ls0 ws0">
+              M/s.BAOUND PORIBHAR NIDHI LIMITED. Policies and Processes and all
+              the above information is accurate to the best of my
+            </div>
+            <div class="t m0 x5 h5 y20 ff2 fs1 fc0 sc0 ls0 ws0">knowledge</div>
+          </div>
+          <div class="c x1 y31 w15 h12">
+            <div class="t m0 x5 h5 y2d ff2 fs1 fc0 sc0 ls0 ws0">
+              Valuer Name
+            </div>
+          </div>
+          <div class="c x1 y32 w15 h12">
+            <div class="t m0 x5 h5 y2d ff2 fs1 fc0 sc0 ls0 ws0">
+              Appraiser Name
+            </div>
+          </div>
+          <div class="c x1 y33 w15 h12">
+            <div class="t m0 x5 h5 y2d ff2 fs1 fc0 sc0 ls0 ws0">
+              Authoriser Name
+            </div>
+          </div>
+        </div>
+        <div
+          class="pi"
+          data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'
+        ></div>
+      </div>
+    </div>
+    <div class="loading-indicator"></div>
+  </body>
+</html>

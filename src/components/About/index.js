@@ -1,9 +1,12 @@
 import AnimatedLetters from "../AnimatedLetters"
+// import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCss3, faGitAlt, faHtml5, faJava, faJsSquare, faReact } from "@fortawesome/free-brands-svg-icons"
 import Loader from 'react-loaders'
 import "./index.scss"
+// import LogoS from "../../assets/images/Resume.pdf"
+import LogoS from "../../assets/images/Resume.pdf"
 const About = () => {
 
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -34,7 +37,12 @@ const About = () => {
           <p>I'm quiet confident, naturally curious, and perpetually working on
             improving my chops one design problem at a time.</p>
             </div>
+            {/* <Link to="/download" className="flat-button">
+            watch cv
+          </Link> */}
+          <a download ="Resume.pdf" href={LogoS} class="flat-button">Download Resume</a>
         </div>
+        
 
         <div className="stage-cube-cont">
           <div className="cubespinner">

@@ -40,7 +40,8 @@
   
   .container.about-page,
   .container.contact-page,
-  .container.project-page{
+  .container.project-page,
+  .container.download-page{
       
 
       h1{
@@ -125,7 +126,8 @@
 
     &.contact-page,
     &.about-page,
-    &.project-page {
+    &.project-page,
+    &.download-page{
       .text-zone {
         position: initial;
         transform: none; 

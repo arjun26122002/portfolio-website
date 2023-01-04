@@ -5,6 +5,7 @@ import Contact from './components/Contact'
 import Layout from './components/Layout'
 import Project from './components/Project'
 import Dashboard from './components/Dashboard'
+import Download from './components/Download'
 import './App.scss'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
            <Route path="/project" element={<Project />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/download" element={<Download />} />
         </Route>
       </Routes>
     </>

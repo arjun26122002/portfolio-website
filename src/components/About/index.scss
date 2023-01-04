@@ -1,3 +1,22 @@
+.flat-button {
+  color: #c29b0c;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  font-family: sans-serif;
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 1px solid #c29b0c;
+  margin-top: 25px;
+  float: left;
+  animation: fadeInAnimation 1s 1.8s backwards;
+  white-space: nowrap;
+
+  &:hover {
+    background: #c29b0c;
+    color: #0b021d;
+  }
+}
 .stage-cube-cont {
     width: 50%;
     height: 100%;

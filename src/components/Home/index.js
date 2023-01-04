@@ -60,9 +60,14 @@ const Home = () => {
             />
           </h1>
           <h2>Student,Front End Developer</h2>
+          <div style={{
+            gap:"5px"
+          }}>
           <Link to="/contact" className="flat-button">
             CONTACT ME
           </Link>
+         
+          </div>
         </div>
         <Logo />
       </div>

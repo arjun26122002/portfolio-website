@@ -7,7 +7,7 @@ const Logo = () => {
     return (
         <div className='Logo-container'>
           <img className='solid-logo' src={LogoS} style={{
-                width:'70vh',display:"flex"
+                width:'45vh',display:"flex",
             }} alt="$" />
 </div> 
             

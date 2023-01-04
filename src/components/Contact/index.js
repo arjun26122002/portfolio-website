@@ -48,10 +48,16 @@ const Contact = () => {
               idx={15}
             />
           </h1>
+          <div style={{
+            fontSize:"20px"
+          }}>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam est
-            sunt sint ullam fuga autem esse dolore velit quibusdam.
+           My Name is Arjun Dey ,I an interested in new technologies work-especially ambitious or large projects.
           </p>
+          <p>
+          If you want to contact me,don't hesitate to contact me using below from either.
+          </p>
+          </div>
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>
               <ul>
@@ -98,10 +104,10 @@ const Contact = () => {
 
         <div
           className="info-map"
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}
+          // style={{
+          //   display: 'flex',
+          //   justifyContent: 'space-between',
+          // }}
         >
           <div>
             Arjun Dey.
@@ -113,7 +119,7 @@ const Contact = () => {
             <br />
             <span>arjun.dey.2612@gmail.com </span>
             <div style={{
-              color:"#c29b0c"
+              color:"#c29b0c",cursor:"pointer"
             }}>8100014395</div>
           </div>
           <div>

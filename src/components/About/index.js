@@ -24,9 +24,16 @@ const About = () => {
               idx={15}
             />
           </h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, vel. Molestias alias temporibus aperiam unde sapiente, dolorum, rerum dicta perferendis molestiae minus debitis obcaecati quae neque aliquam architecto. Eum et numquam iure doloribus maxime!</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quis. Doloremque, quidem iure. Tempore dignissimos, officia dolores odit quasi similique corporis?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, facilis?</p>
+          <div className="updateP">
+          <p >
+          I am from Howrah,West Bengal. currently pursuing Bachelor of Technology major in computer science and Engineering. I am a student of 3rd year and passionate Front-End devaloper.
+          </p>
+          <p align="LEFT">I'm a very ambitious front-end developer looking for a role in an
+            established IT company with the opportunity to work with the latest
+            technologies on challenging and diverse projects.</p>
+          <p>I'm quiet confident, naturally curious, and perpetually working on
+            improving my chops one design problem at a time.</p>
+            </div>
         </div>
 
         <div className="stage-cube-cont">

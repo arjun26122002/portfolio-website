@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import LogoTitle from '../../assets/images/logo_s1.png'
-
 import Logo from './Logo'
 import './index.scss'
 
@@ -29,7 +28,7 @@ const Home = () => {
   ]
 
   useEffect(() => {
-    setTimeout(() => {
+     setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 4000)
   }, [])
@@ -37,11 +36,6 @@ const Home = () => {
   return (
     <>
       <div className="container home-page">
-        {/* <div className='update-media' style={{
-          display:'flex',
-          justifyContent:"space-between",right :"0"
-
-        }}> */}
         <div className="text-zone">
           <h1>
             <span className={letterClass}>H</span>
@@ -51,7 +45,7 @@ const Home = () => {
             <span className={`${letterClass} _14`}>'m</span>
             <img
               src={LogoTitle}
-              alt="Developer "
+              alt="developer"
             />
             <AnimatedLetters
               letterClass={letterClass}
@@ -71,14 +65,11 @@ const Home = () => {
           </Link>
         </div>
         <Logo />
-        </div>
-      {/* </div> */}
-      {/* <Loader type="pacman" /> */}
-      <Loader type="pacman"
-/>
+      </div>
+
+      <Loader type="pacman" />
     </>
   )
 }
 
 export default Home
-

@@ -15,16 +15,16 @@
             },
 
             {
-                "cover": "/project/1/hey1.png",
-                "title": "Coming Soon......",
-                "description": "",
-                "url": "https://www.google.com/"
+                "cover": "/project/1/hey12.png",
+                "title": "KBC clone",
+                "description": "This is a quiz game",
+                "url": "https://quiz-game-kbc.netlify.app/"
             },
             {
-                "cover": "/project/1/hey1.png",
-                "title": "Coming Soon......",
-                "description": "",
-                "url": "https://www.google.com/"
+                "cover": "/project/1/hey13.png",
+                "title": "মাতৃশক্তি",
+                "description": "This is a website for durga puja",
+                "url": "https://matrisokti.netlify.app/"
             }
     ]
  }

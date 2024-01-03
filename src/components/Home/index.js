@@ -59,7 +59,7 @@ const Home = () => {
               idx={22}
             />
           </h1>
-          <h2>Student,Front End Developer</h2>
+          <h2>Student,Mern Developer</h2>
           <div style={{
             gap:"5px"
           }}>

@@ -8,7 +8,7 @@ import Loader from 'react-loaders'
 import "./index.scss"
 
 // import LogoS from "../../assets/images/Resume.pdf"
-import Resums from "../../assets/images/Resume.pdf"
+// import Resums from "../../assets/images/Resume.pdf"
 const About = () => {
 
   const [letterClass, setLetterClass] = useState('text-animate')
